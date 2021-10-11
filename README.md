@@ -1,6 +1,6 @@
 # bidipeppercrap-worker
 
-Main usage for doing CRON job to prevent pausing of my supabase 1 week inactivity
+Main usage is for doing CRON job to prevent pausing of my supabase 1 week inactivity
 
 ## Installation
 
