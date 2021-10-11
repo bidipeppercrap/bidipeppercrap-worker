@@ -14,9 +14,25 @@ const author = {
  * @param {Request} request
  */
 async function handleRequest(request) {
+  const { pathname } = new URL(request.url)
+
+  if (pathname.startsWith('/wake-supabase')) {
+    return await wakeSupabase()
+  }
+
   return new Response(JSON.stringify(author), {
     headers: { 'content-type': 'application/json' },
   })
+}
+
+async function wakeSupabase() {
+  let { data: posts, error } = await supabase
+  .from('posts')
+  .select('id')
+
+  if(error) return new Response(JSON.stringify(error), { headers: { 'content-type': 'application/json' } })
+
+  return new Response(JSON.stringify(posts), { headers: { 'content-type': 'application/json' } })
 }
 
 addEventListener('scheduled', event => {
