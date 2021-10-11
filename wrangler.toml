@@ -1,0 +1,8 @@
+name = "bidipeppercrap-worker"
+type = "webpack"
+
+account_id = "bc85c041b478ed7d1d05b64d204a03b1"
+workers_dev = true
+route = ""
+zone_id = ""
+compatibility_date = "2021-10-11"
