@@ -1,15 +1,7 @@
-# 👷 `worker-template` Hello World
+# bidipeppercrap-worker
 
-A template for kick starting a Cloudflare worker project.
+Main usage for doing CRON job to prevent pausing of my supabase 1 week inactivity
 
-[`index.js`](https://github.com/cloudflare/worker-template/blob/master/index.js) is the content of the Workers script.
+## Installation
 
-#### Wrangler
-
-To generate using [wrangler](https://github.com/cloudflare/wrangler)
-
-```
-wrangler generate projectname https://github.com/cloudflare/worker-template
-```
-
-Further documentation for Wrangler can be found [here](https://developers.cloudflare.com/workers/tooling/wrangler).
+Please fill out `config.js` by copying `config.example.js`
