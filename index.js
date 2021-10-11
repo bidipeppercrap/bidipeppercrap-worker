@@ -1,3 +1,5 @@
+import { supabase } from './utils/supabase'
+
 addEventListener('fetch', event => {
   event.respondWith(handleRequest(event.request))
 })
@@ -15,4 +17,21 @@ async function handleRequest(request) {
   return new Response(JSON.stringify(author), {
     headers: { 'content-type': 'application/json' },
   })
+}
+
+addEventListener('scheduled', event => {
+  event.waitUntil(
+    handleSchedule(event.scheduledTime)
+  )
+})
+
+async function handleSchedule(scheduledDate) {
+  let { data: posts, error } = await supabase
+  .from('posts')
+  .select('id')
+
+  if(error) return console.log(error)
+
+  console.log('Running: ' + scheduledDate)
+  console.log(posts)
 }
